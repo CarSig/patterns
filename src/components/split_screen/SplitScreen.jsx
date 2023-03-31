@@ -1,20 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const Container = styled.div`
+    display: flex;`
+
+const Panel = styled.div`
+    flex: 1;`
+
+
 
 const SplitScreen = ({
     left: Left,
     right: Right }) => {
     return (
-        <div>
-            <div>
+        <Container>
+            <Panel>
                 <Left />
-            </div>
-            <div>
+            </Panel>
+            <Panel>
                 <Right />
-            </div>
+            </Panel>
 
-        </div>
+        </Container>
     )
 }
 
