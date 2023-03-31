@@ -21,18 +21,18 @@ const Panel = styled.div`
 
 
 const SplitScreen = ({
-    left: Left,
-    right: Right,
+    children,
     leftWidth = 1,
     rightWidth = 5
 }) => {
+    const [left, right] = children
     return (
         <Container>
             <Panel left panelWidth={leftWidth} leftWidth={1}>
-                <Left />
+                {left}
             </Panel>
             <Panel right panelWidth={rightWidth} rightWidth={1}>
-                <Right />
+                {right}
             </Panel>
 
         </Container >

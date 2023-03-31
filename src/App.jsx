@@ -1,15 +1,15 @@
 import SplitScreen from "./components/split_screen/SplitScreen"
 
 
-const LeftComponent = () => {
+const LeftComponent = ({ message }) => {
   return (
-    <h1>Left</h1>
+    <h1>{message}</h1>
   )
 }
 
-const RightComponent = () => {
+const RightComponent = ({ message }) => {
   return (
-    <h1>Right</h1>
+    <h1>{message}</h1>
   )
 }
 
@@ -18,7 +18,10 @@ function App() {
 
 
   return (
-    <SplitScreen left={LeftComponent} right={RightComponent} />
+    <SplitScreen left={LeftComponent} right={RightComponent} >
+      <LeftComponent message="Hello" />
+      <RightComponent message="world!" />
+    </SplitScreen >
   )
 }
 
