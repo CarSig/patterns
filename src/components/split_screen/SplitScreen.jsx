@@ -1,8 +1,20 @@
 import React from 'react'
+import styled from 'styled-components'
 
-const SplitScreen = () => {
+
+const SplitScreen = ({
+    left: Left,
+    right: Right }) => {
     return (
-        <div>SplitScreen</div>
+        <div>
+            <div>
+                <Left />
+            </div>
+            <div>
+                <Right />
+            </div>
+
+        </div>
     )
 }
 
