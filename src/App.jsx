@@ -1,12 +1,24 @@
+import SplitScreen from "./components/split_screen/SplitScreen"
+
+
+const LeftComponent = () => {
+  return (
+    <h1>Left</h1>
+  )
+}
+
+const RightComponent = () => {
+  return (
+    <h1>Right</h1>
+  )
+}
 
 
 function App() {
 
 
   return (
-    <div className="App">
-  
-    </div>
+    <SplitScreen left={LeftComponent} right={RightComponent} />
   )
 }
 
