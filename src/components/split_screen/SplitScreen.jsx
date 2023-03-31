@@ -5,9 +5,12 @@ const Container = styled.div`
     display: flex;`
 
 const Panel = styled.div`
-    flex: 1;
+    flex: ${props => props.panelWidth};
+  
     ${props => props.left && css`
     background-color: orange;
+    min-width: 111px;
+    max-width: 320px;
     `}
     ${props => props.right && css`
     background-color: blue;
@@ -19,17 +22,20 @@ const Panel = styled.div`
 
 const SplitScreen = ({
     left: Left,
-    right: Right }) => {
+    right: Right,
+    leftWidth = 1,
+    rightWidth = 5
+}) => {
     return (
         <Container>
-            <Panel left>
+            <Panel left panelWidth={leftWidth} leftWidth={1}>
                 <Left />
             </Panel>
-            <Panel right>
+            <Panel right panelWidth={rightWidth} rightWidth={1}>
                 <Right />
             </Panel>
 
-        </Container>
+        </Container >
     )
 }
 
