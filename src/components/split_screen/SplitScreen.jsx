@@ -2,7 +2,12 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 const Container = styled.div`
-    display: flex;`
+    display: flex;
+    flex-direction: ${props => props.type === 'vertical' ? 'column' : 'row'}
+
+
+
+    `
 
 const Panel = styled.div`
     flex: ${props => props.panelWidth};
@@ -15,6 +20,7 @@ const Panel = styled.div`
     ${props => props.right && css`
     background-color: blue;
     `}
+ 
 `
 
 
@@ -23,11 +29,13 @@ const Panel = styled.div`
 const SplitScreen = ({
     children,
     leftWidth = 1,
-    rightWidth = 5
+    rightWidth = 5,
+    type = 'horizontal',
+
 }) => {
     const [left, right] = children
     return (
-        <Container>
+        <Container type={type}>
             <Panel left panelWidth={leftWidth} leftWidth={1}>
                 {left}
             </Panel>

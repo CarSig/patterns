@@ -18,7 +18,7 @@ function App() {
 
 
   return (
-    <SplitScreen left={LeftComponent} right={RightComponent} >
+    <SplitScreen type={"horizontal"} left={LeftComponent} right={RightComponent} >
       <LeftComponent message="Hello" />
       <RightComponent message="world!" />
     </SplitScreen >
