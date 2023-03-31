@@ -1,11 +1,19 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Container = styled.div`
     display: flex;`
 
 const Panel = styled.div`
-    flex: 1;`
+    flex: 1;
+    ${props => props.left && css`
+    background-color: orange;
+    `}
+    ${props => props.right && css`
+    background-color: blue;
+    `}
+`
+
 
 
 
@@ -14,10 +22,10 @@ const SplitScreen = ({
     right: Right }) => {
     return (
         <Container>
-            <Panel>
+            <Panel left>
                 <Left />
             </Panel>
-            <Panel>
+            <Panel right>
                 <Right />
             </Panel>
 
