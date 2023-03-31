@@ -10,7 +10,7 @@ const Container = styled.div`
     `
 
 const Panel = styled.div`
-    flex: ${props => props.panelWidth};
+    flex: ${props => props.weight};
   
     ${props => props.left && css`
     background-color: orange;
@@ -28,18 +28,18 @@ const Panel = styled.div`
 
 const SplitScreen = ({
     children,
-    leftWidth = 1,
-    rightWidth = 5,
+    leftWeight = 1,
+    rightWeight = 2,
     type = 'horizontal',
 
 }) => {
     const [left, right] = children
     return (
         <Container type={type}>
-            <Panel left panelWidth={leftWidth} leftWidth={1}>
+            <Panel left weight={leftWeight} leftWidth={1}>
                 {left}
             </Panel>
-            <Panel right panelWidth={rightWidth} rightWidth={1}>
+            <Panel right weight={rightWeight} rightWidth={1}>
                 {right}
             </Panel>
 

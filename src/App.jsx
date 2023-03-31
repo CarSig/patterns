@@ -18,7 +18,7 @@ function App() {
 
 
   return (
-    <SplitScreen type={"horizontal"} left={LeftComponent} right={RightComponent} >
+    <SplitScreen type={"horizontal"} leftWeight={1} rightWeight={4} >
       <LeftComponent message="Hello" />
       <RightComponent message="world!" />
     </SplitScreen >
