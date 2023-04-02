@@ -1,55 +1,32 @@
-import RecursiveComponentColored from "./components/Functional/recursive_component/RecursiveComponentColored"
-import SplitScreen from "./components/Layout/split_screen/SplitScreen"
-import { nestedObject } from "./components/Functional/recursive_component/nestedObject"
-import { DangerButton, BigSuccessButton } from "./components/Functional/partially_applied_component/partiallyApply"
-import RegularList from "./components/Layout/lists/RegularList"
-import ListItemPersonSmall from "./components/Layout/lists/person/ListItemPersonSmall"
-import ListItemPersonLarge from "./components/Layout/lists/person/ListItemPersonLarge"
-import { people, products } from "./components/Layout/lists/data"
-import NumberedList from "./components/Layout/lists/NumberedList"
-import ListItemProductLarge from "./components/Layout/lists/product/ListItemProductLarge"
-import ListItemProductSmall from "./components/Layout/lists/product/ListItemProductSmall"
-import Modal from "./components/Layout/modal/Modal"
 
-const LeftComponent = ({ message }) => {
-  return (
-    <h1>{message}</h1>
-  )
-}
 
-const RightComponent = ({ message }) => {
-  return (
-    <h1>{message}</h1>
-  )
-}
+import { useState } from 'react'
+import Layout from './Layout'
+import Functional from './Functional'
 
 
 function App() {
+  const [selectedOption, setSelectedOption] = useState('layout')
 
 
   return (
     <div>
       <h1>React Patterns</h1>
-      <h2>Layout</h2>
-      <h3>Split Screen</h3>
-      <SplitScreen type={"horizontal"} leftWeight={1} rightWeight={4} >
-        <LeftComponent message="Hello" />
-        <RightComponent message="world!" />
-      </SplitScreen >
-      <h3>Lists</h3>
 
-      <Modal>
-        <RegularList items={people} resourceName="person" itemComponent={ListItemPersonLarge} />
+      <select id="select" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
+        <option value="layout">Layout</option>
+        <option value="functional">Functional</option>
+      </select>
 
-      </Modal>
+
+      {selectedOption === 'layout' && <Layout />}
+      {selectedOption === 'functional' && <Functional />}
 
 
 
-      <h2>Functional</h2>
 
-      <DangerButton text="Danger Button" />
-      <BigSuccessButton text="Big Success Button" />
-      <RecursiveComponentColored data={nestedObject} />
+
+
 
     </div>
   )
