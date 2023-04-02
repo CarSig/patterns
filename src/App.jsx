@@ -9,6 +9,7 @@ import { people, products } from "./components/Layout/lists/data"
 import NumberedList from "./components/Layout/lists/NumberedList"
 import ListItemProductLarge from "./components/Layout/lists/product/ListItemProductLarge"
 import ListItemProductSmall from "./components/Layout/lists/product/ListItemProductSmall"
+import Modal from "./components/Layout/modal/Modal"
 
 const LeftComponent = ({ message }) => {
   return (
@@ -37,13 +38,12 @@ function App() {
       </SplitScreen >
       <h3>Lists</h3>
 
+      <Modal>
+        <RegularList items={people} resourceName="person" itemComponent={ListItemPersonLarge} />
 
-      <RegularList items={people} resourceName="person" itemComponent={ListItemPersonSmall} />
-      <RegularList items={people} resourceName="person" itemComponent={ListItemPersonLarge} />
+      </Modal>
 
 
-      <NumberedList items={products} resourceName="product" itemComponent={ListItemProductSmall} />
-      <NumberedList items={products} resourceName="product" itemComponent={ListItemProductLarge} />
 
       <h2>Functional</h2>
 
