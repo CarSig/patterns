@@ -1,4 +1,4 @@
-import RecursiveComponent from "./components/Functional/recursive_component/RecursiveComponent"
+import RecursiveComponentColored from "./components/Functional/recursive_component/RecursiveComponentColored"
 import SplitScreen from "./components/Layout/split_screen/SplitScreen"
 import { nestedObject } from "./components/Functional/recursive_component/nestedObject"
 import { DangerButton, BigSuccessButton } from "./components/Functional/partially_applied_component/partiallyApply"
@@ -33,7 +33,7 @@ function App() {
 
       <DangerButton text="Danger Button" />
       <BigSuccessButton text="Big Success Button" />
-      <RecursiveComponent data={nestedObject} />
+      <RecursiveComponentColored data={nestedObject} />
 
     </div>
   )
