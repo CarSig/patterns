@@ -2,6 +2,13 @@ import RecursiveComponentColored from "./components/Functional/recursive_compone
 import SplitScreen from "./components/Layout/split_screen/SplitScreen"
 import { nestedObject } from "./components/Functional/recursive_component/nestedObject"
 import { DangerButton, BigSuccessButton } from "./components/Functional/partially_applied_component/partiallyApply"
+import RegularList from "./components/Layout/lists/RegularList"
+import ListItemPersonSmall from "./components/Layout/lists/person/ListItemPersonSmall"
+import ListItemPersonLarge from "./components/Layout/lists/person/ListItemPersonLarge"
+import { people, products } from "./components/Layout/lists/data"
+import NumberedList from "./components/Layout/lists/NumberedList"
+import ListItemProductLarge from "./components/Layout/lists/product/ListItemProductLarge"
+import ListItemProductSmall from "./components/Layout/lists/product/ListItemProductSmall"
 
 const LeftComponent = ({ message }) => {
   return (
@@ -28,6 +35,15 @@ function App() {
         <LeftComponent message="Hello" />
         <RightComponent message="world!" />
       </SplitScreen >
+      <h3>Lists</h3>
+
+
+      <RegularList items={people} resourceName="person" itemComponent={ListItemPersonSmall} />
+      <RegularList items={people} resourceName="person" itemComponent={ListItemPersonLarge} />
+
+
+      <NumberedList items={products} resourceName="product" itemComponent={ListItemProductSmall} />
+      <NumberedList items={products} resourceName="product" itemComponent={ListItemProductLarge} />
 
       <h2>Functional</h2>
 
