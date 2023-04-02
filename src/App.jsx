@@ -1,6 +1,7 @@
-import SplitScreen from "./components/split_screen/SplitScreen"
 import RecursiveComponent from "./components/recursive_component/RecursiveComponent"
-import nestedObject from "./recursive_components/nestedObject"
+import SplitScreen from "./components/split_screen/SplitScreen"
+
+import { nestedObject } from "./components/recursive_component/nestedObject"
 
 
 const LeftComponent = ({ message }) => {

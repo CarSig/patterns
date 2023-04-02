@@ -1,4 +1,4 @@
-const nestedObject = {
+export const nestedObject = {
     a: 1,
     b: {
         b1: 4,
